@@ -1,53 +1,23 @@
-import React from 'react';
-import SearchView from './components/SearchView';
-import data from './data.json'
+
 import styles from './App.module.css';
-import Header from './components/Header';
+import Login from './components/Login';
+import Start from './components/Start';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Ravintolat from '/.Ravintolat';
+import { Link } from 'react-router-dom';
 
-class App extends React.Component {
-  constructor(props)
-  {
-    super(props);
-    this.state = {
-      items: data.items,
-      productSearchString: "",
-    }
-  }
-
-
-  onSearchFieldChange = (event) => {
-
-    console.log('Keyboard event');
-    console.log(event.target.value);
-    this.setState({ productSearchString: event.target.value });
-  }
-
-  
-
-  render()
-  {
-    let output =
-      <div>
-      <Header />
-      <div className={styles.paasivubar}>
-      <div > Ravintolahaku <input type="text"  onChange={ this.onSearchFieldChange } value={ this.state.productSearchString }/></div>       
-      <SearchView
-          items={ this.state.items.filter((item) => item.name.toLowerCase().includes(this.state.productSearchString.toLowerCase())) }
-          />
-          
-        </div>
-        </div>
-        
-
-
-    
-
-    return (
-      <>
-        { output }
-      </>
-    )
-  }
+function App() {
+  return (
+    <BrowserRouter>
+    <div>
+      <Routes>
+        <Route path="/" element= { <Login /> } />
+        <Route path="/Ravintolat" element= { <Ravintolat /> } />
+      </Routes>
+      </div>
+      
+    </BrowserRouter>
+  );
 }
 
 export default App;
