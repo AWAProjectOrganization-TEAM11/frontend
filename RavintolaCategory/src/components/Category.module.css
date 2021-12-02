@@ -1,0 +1,35 @@
+
+.maincontainer {
+  display: flex;
+  width: 600px ;
+  font-size: 18px;
+  height: auto;
+  margin-right: 10px;
+  margin-left: 0px;
+  color: white;
+  background-color: antiquewhite;
+  border-top: 3px solid white;
+}
+
+.Category{
+  color: black;
+  margin-left: 230px;
+  font-size: 30px;
+  margin-bottom: 25px;
+  
+}
+
+.hinta{
+  color: red;
+  font-size: 30px;
+  margin-bottom: 25px;
+  float: right;
+}
+
+
+
+
+
+
+
+
