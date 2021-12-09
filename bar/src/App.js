@@ -1,6 +1,4 @@
 import React, {useState, useEffect } from "react";
-import "./styles.css";
-
 import ProgressBar from './Progress'
 
 export default function App() {
@@ -21,5 +19,5 @@ export default function App() {
       });
     }, 1000);
   }, []);
-  return <ProgressBar value={value} max={100} />;
+  return <ProgressBar value={value} max={100} color={"#ff7979"} width={"600px"} height={"500px"} />;
 }
