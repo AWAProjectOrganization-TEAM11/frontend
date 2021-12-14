@@ -1,19 +1,42 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import SearchView from './SearchView';
+
 import data from '../data.json'
 import styles from './Ravintolaui.module.css';
 import Header from './Header';
+import Axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
-class App extends React.Component {
+import SearchResult from './SearchResult';
+
+import Bar from '../Bar';
+class App extends React.Component  {
+
+
+  
+
+
+
   constructor(props)
   {
     super(props);
     this.state = {
-      items: data.items,
+      items: [], 
+      
+   
       productSearchString: "",
+      adminModeActive: false,
+      
     }
   }
 
+  componentDidMount() {
+    Axios.get('http://localhost:5000/ravintola')
+      .then((response) => {
+        this.setState({ items: response.data })
+        console.log(response.data)
+      });
+  }
 
   onSearchFieldChange = (event) => {
 
@@ -24,20 +47,35 @@ class App extends React.Component {
 
 
 
+  
+
+ 
+ 
+
   render()
   {
     let output =
       <div>
+        
       <Header />
-      <div className={styles.paasivubar}>
-      <div > Ravintolahaku <input type="text"  onChange={ this.onSearchFieldChange } value={ this.state.productSearchString }/></div>
+      <div className={styles.paasivubar} >
+      <div > Ravintolahaku <input type="text"  onChange={ this.onSearchFieldChange } value={ this.state.productSearchString } /></div>
+     
       <SearchView
-          items={ this.state.items.filter((item) => item.name.toLowerCase().includes(this.state.productSearchString.toLowerCase())) }
-          />
+          
+          items={ this.state.items.filter((item) => item.restaurant_name.toLowerCase().includes(this.state.productSearchString.toLowerCase())) }
+      />
+       
+        
+     
+        
+       
 
         </div>
-        </div>
-
+        </div>  
+        
+    
+        
 
 
 

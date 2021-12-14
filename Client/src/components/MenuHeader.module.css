@@ -24,7 +24,7 @@
 
 .uloskirjaus{
     font-size: 20px;
-    color: rgb(7, 6, 6);
+    color: white;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
@@ -39,24 +39,4 @@
     margin-right: auto;
     font-family: Comic Sans MS;
 
-}
-
-
-.kayttaja{
-    font-size: 25px;
-    color: whitesmoke;
-    align-items: right;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: Comic Sans MS;
-    
-}
-.back{
-    font-size: 5px;
-    color: rgb(7, 6, 6);
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: Comic Sans MS;
-    padding-left: 10%;
 }
